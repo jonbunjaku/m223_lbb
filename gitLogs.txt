@@ -1,0 +1,97 @@
+commit 3468bc3cf18b6e310fee36660eaae36517feb5de
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 14:34:56 2022 +0000
+
+    last changes
+
+commit 86e45a002b142bf3444f56393c049c85a4abbd89
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 14:33:27 2022 +0000
+
+    last changes
+
+commit c48512b8a0f2be25b8919ecb37af508f3b559ae2
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 13:21:58 2022 +0000
+
+    changes
+
+commit 9bc5eb55ce7d0d985a5491381acf1b7fb99c4a53
+Merge: 36e4746 be26deb
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 13:10:17 2022 +0000
+
+    Merge branch 'feature/changes' into feature/security
+
+commit 36e474618f2d8cd0845c9d294c03bb15c69df8e0
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 12:08:57 2022 +0000
+
+    import added
+
+commit be26deb1db81144ef6817efd037d439970d8e116
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 11:46:06 2022 +0000
+
+    validation added
+
+commit 94feda56856adf5d6bb7b93cc9ff7cf4a2d049cc
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 11:32:05 2022 +0000
+
+    rest methods added to controllers
+
+commit 55d92f92a5bfc4e64503e83aee24bb36d3513684
+Merge: 79ce94c 966014b
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 09:45:05 2022 +0000
+
+    merged branch changes into security
+
+commit 966014b102476765e0e716b99b1d6cf88da8987e
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 09:29:54 2022 +0000
+
+    added controllers, services and updated models
+
+commit 79ce94cf082977a2317e941a5b902615f38283b3
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Wed Sep 28 09:18:36 2022 +0000
+
+    jwt added
+
+commit ed3692852bc628376ff2f68321bbde0584a17289
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Mon Sep 26 19:52:17 2022 +0000
+
+    added exceptions
+
+commit d313d6218b8e180262d81ff1aac647c0832fd0d7
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Mon Sep 26 19:48:39 2022 +0000
+
+    added services and exceptions
+
+commit f445905acf058b7e0472b08717cc2607863af8d6
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Mon Sep 26 19:35:30 2022 +0000
+
+    Added Services and Exceptions
+
+commit 7edeff68b06dfad404c0d86a9850dd6d8f836c2b
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Mon Sep 26 12:32:42 2022 +0000
+
+    added Entities
+
+commit 1033f6717d4457f35d479f044985eb87f88bc1f3
+Author: Jon Bunjaku <bunjakujon123@gmail.com>
+Date:   Mon Sep 26 14:23:39 2022 +0200
+
+    entities created
+
+commit e87ae84eed851e3dcfd7f73acce22f41a4fcce06
+Author: jonbunjaku <70207373+jonbunjaku@users.noreply.github.com>
+Date:   Mon Sep 26 11:09:20 2022 +0200
+
+    Initial commit
