@@ -21,7 +21,7 @@ public class UserRessourceTest {
         String token = getAdminToken();
         given()
         .header("Authorization", "Bearer " + token)
-        .when().get("/api/bookings/getAll")
+        .when().get("/api/users/getAll")
         .then()
             .statusCode(200);
     }
@@ -32,7 +32,7 @@ public class UserRessourceTest {
         RestAssured.
             given()
                 .header("Authorization", "Bearer " + token)
-                .when().delete("/api/bookings/delete/1")
+                .when().delete("/api/users/delete/1")
                 .then()
                     .assertThat()
                     .statusCode(403);
