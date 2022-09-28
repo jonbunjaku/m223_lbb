@@ -12,6 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
@@ -63,14 +64,11 @@ public class BookingController {
         return bookingService.updateBooking(booking);
     }
 
-    @PUT
-    @RolesAllowed("admin")
-    @Path("putStatus")
+    @POST
+    @PermitAll
+    @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @RequestScoped
-    public Bookingstatus updateBookingstatus(Bookingstatus bookingstatus) {
-        return bookingService.updateBookingStatus(bookingstatus);
+    public Booking createBooking(Booking booking) {
+        return bookingService.createBooking(booking);
     }
-    
 }

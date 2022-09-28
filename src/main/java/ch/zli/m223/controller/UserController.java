@@ -11,6 +11,8 @@ import javax.websocket.server.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -27,10 +29,10 @@ public class UserController {
 
     @GET
     @Path("/getAll")
-    @PermitAll
+    @RolesAllowed("admin")
     @Produces(MediaType.APPLICATION_JSON)
     @RequestScoped
-    public List<User> index() {
+    public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
@@ -43,5 +45,29 @@ public class UserController {
         userService.deleteUser(id);
     }
 
+    @GET
+    @Path("/get/{id}")
+    @RolesAllowed("admin")
+    @Produces(MediaType.APPLICATION_JSON)
+    public User getUserById(@PathParam("id") Long id) {
+        return userService.getUserById(id);
+    }
+
+    @POST
+    @Path("/create")
+    @RolesAllowed("admin")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public User createUser(User user) {
+        return userService.createUser(user);
+    }
+
+    @PUT
+    @Path("/put/{id}")
+    @RolesAllowed("admin")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public User updateUser(User user) {
+        return userService.updateUser(user);
+    }
 
 }

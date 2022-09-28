@@ -34,4 +34,10 @@ public class WorkspaceService {
     public Workspace updateWorkspace(Workspace workspace) {
         return entityManager.merge(workspace);
     }
+
+    public Workspace getWorkspaceById(Long id) {
+        var workspace = entityManager.find(Workspace.class, id);
+        return workspace;
+    }
+
 }

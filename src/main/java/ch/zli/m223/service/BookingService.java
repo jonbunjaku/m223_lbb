@@ -40,12 +40,6 @@ public class BookingService {
     }
 
     @Transactional
-    public Bookingstatus updateBookingStatus(Bookingstatus bookingstatus) {
-        return entityManager.merge(bookingstatus);
-
-    }
-
-    @Transactional
     public Booking createBooking(Booking booking) {
         entityManager.persist(booking);
         return booking;

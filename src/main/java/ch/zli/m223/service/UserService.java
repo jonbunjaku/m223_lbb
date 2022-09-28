@@ -36,18 +36,22 @@ public class UserService {
 
     public User getUserById(Long id) {
         User user = entityManager.find(User.class, id);
-        if(user == null){
+        if (user == null) {
             throw new UserNotFoundException("User mit der Id" + id + "nicht gefunden");
         } else {
             return user;
         }
     }
+
     @Transactional
     public User updateUser(User user) {
         return entityManager.merge(user);
     }
-    public User getUserByEmailAndPassword(String emailToBeChecked, String passwordToBeChecked){
-        var query = entityManager.createQuery("FROM User WHERE email = '" + emailToBeChecked + "' AND passwort = '" + passwordToBeChecked +"'", User.class);
+
+    public User getUserByEmailAndPassword(String emailToBeChecked, String passwordToBeChecked) {
+        var query = entityManager.createQuery(
+                "FROM User WHERE email = '" + emailToBeChecked + "' AND passwort = '" + passwordToBeChecked + "'",
+                User.class);
         return query.getSingleResult();
     }
 }
