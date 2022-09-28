@@ -1,22 +1,26 @@
 package ch.zli.m223.service;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
-import org.xml.sax.EntityResolver;
 
 import ch.zli.m223.model.Booking;
+import ch.zli.m223.model.Bookingstatus;
+import ch.zli.m223.model.User;
 
+@ApplicationScoped
 public class BookingService {
     @Inject
     private EntityManager entityManager;
 
-/*     public List<Booking> findBookingsByUserId(Long id) {
-        var booking = entityManager.find(Booking.class, id);
-        return ;
-    } */
+   public List<Booking> findBookingsByUserId(Long id) { 
+        var booking = entityManager.createQuery("FROM Booking WHERE users_id = '" + id + "'", Booking.class);
+        return booking.getResultList();
+    } 
 
 
     public List<Booking> findAll() {
@@ -33,6 +37,12 @@ public class BookingService {
     @Transactional
     public Booking updateBooking(Booking booking) {
         return entityManager.merge(booking);
+    }
+
+    @Transactional
+    public Bookingstatus updateBookingStatus(Bookingstatus bookingstatus) {
+        return entityManager.merge(bookingstatus);
+
     }
 
     @Transactional

@@ -27,9 +27,8 @@ public class Booking implements Serializable{
     @ManyToOne(optional = false)
     private Workspace workspaces;
 
-    @OneToMany(mappedBy = "bookings")
-    @JsonIgnore
-    private Set<Booking> bookings;
+    @ManyToOne(optional = false)
+    private Bookingstatus bookingStatus;
 
     @Column(nullable = false)
     private Date start_date;
@@ -61,12 +60,12 @@ public class Booking implements Serializable{
         this.workspaces = workspaces;
     }
 
-    public Set<Booking> getBookings() {
-        return bookings;
+    public Bookingstatus getBookingStatus() {
+        return bookingStatus;
     }
 
-    public void setBookings(Set<Booking> bookings) {
-        this.bookings = bookings;
+    public void setBookingStatus(Bookingstatus bookingstatus) {
+        this.bookingStatus = bookingstatus;
     }
 
     public Date getStart_date() {
