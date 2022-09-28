@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+import ch.zli.m223.exception.UserNotFoundException;
 import ch.zli.m223.model.User;
 
 @ApplicationScoped
