@@ -46,7 +46,6 @@ public class UserService {
     public User updateUser(User user) {
         return entityManager.merge(user);
     }
-
     public User getUserByEmailAndPassword(String emailToBeChecked, String passwordToBeChecked) {
         var query = entityManager.createQuery(
                 "FROM User WHERE email = '" + emailToBeChecked + "' AND passwort = '" + passwordToBeChecked + "'",

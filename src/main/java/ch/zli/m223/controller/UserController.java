@@ -36,6 +36,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    
     @DELETE
     @RolesAllowed("admin")
     @Path("/delete/{id}")
