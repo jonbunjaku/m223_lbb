@@ -23,7 +23,7 @@ public class Coffee implements Serializable{
     private Long id;
 
     @Column(nullable = false)
-    private String type;
+    private String typ;
 
     @Column(nullable = false)
     private Long price;
@@ -44,12 +44,12 @@ public class Coffee implements Serializable{
       this.id = id;
     }
 
-    public String getType() {
-      return type;
+    public String getTyp() {
+      return typ;
     }
 
-    public void setType(String type) {
-      this.type = type;
+    public void setTyp(String typ) {
+      this.typ = typ;
     }
 
     public Long getPrice() {

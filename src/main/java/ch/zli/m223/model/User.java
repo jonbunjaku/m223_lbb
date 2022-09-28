@@ -11,10 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 @Entity
 public class User implements Serializable {
@@ -25,18 +27,25 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "users")
     @JsonIgnore
     private Set<User> users;
-    
+
     @Column(nullable = false)
+    @Max(value = 100)
     private String vorname;
 
     @Column(nullable = false)
+    @Max(value = 100)
     private String nachname;
 
     @Column(nullable = false)
+    @Max(value = 100)
     private String email;
 
     @Column(nullable = false)
+    @Max(value = 100)
     private String passwort;
+
+    @Column(nullable = false)
+    private Boolean isAdmin;
 
     @ManyToMany(mappedBy = "users")
     private Set<Coffee> bevarages;
@@ -95,6 +104,14 @@ public class User implements Serializable {
 
     public void setBevarages(Set<Coffee> bevarages) {
         this.bevarages = bevarages;
+    }
+
+    public Boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
 }
