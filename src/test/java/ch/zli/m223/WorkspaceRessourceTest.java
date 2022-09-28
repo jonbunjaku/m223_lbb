@@ -1,3 +1,18 @@
+package ch.zli.m223;
+
+import io.quarkus.test.junit.QuarkusTest;
+import io.restassured.RestAssured;
+import org.junit.jupiter.api.Test;
+import ch.zli.m223.model.User;
+import static io.restassured.RestAssured.given;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse.BodyHandlers;
+
 @QuarkusTest
 public class WorkspaceRessourceTest {
     // Good Case
@@ -6,7 +21,7 @@ public class WorkspaceRessourceTest {
         String token = getToken();
         given()
         .header("Authorization", "Bearer " + token)
-        .when().get("http://127.0.0.1:8080/workplaces/getAll")
+        .when().get("/api/workspaces/getAll")
         .then()
             .statusCode(200);
     }
@@ -17,7 +32,7 @@ public class WorkspaceRessourceTest {
         RestAssured.
             given()
                 .header("Authorization", "Bearer " + token)
-                .when().delete("http://127.0.0.1:8080/workplaces/delete/-5")
+                .when().delete("/api/workspaces/delete/-5")
                 .then()
                     .assertThat()
                     .statusCode(403);
@@ -27,7 +42,7 @@ public class WorkspaceRessourceTest {
     private String getToken() throws IOException, InterruptedException {
         var client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("http://127.0.0.1:8080/auth/login/jon.bunjaku@coworking.ch/test"))
+            .uri(URI.create("http://localhost:8080/auth/login/jon@gmail.com/password"))
             .GET()
             .build();
        

@@ -43,7 +43,7 @@ public class UserController {
     @Consumes(MediaType.APPLICATION_JSON)
     @RequestScoped
     public void deleteUser(@PathParam("id") Long id) {
-        userService.deleteUser(id);
+            userService.deleteUser(id);  
     }
 
     @GET
